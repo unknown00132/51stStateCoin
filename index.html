@@ -219,6 +219,15 @@
         <p>🎯 <strong>One thing’s for sure:</strong> If you’re not holding <strong>$51ST</strong>, you’re missing out on the wildest ride in crypto!</p>
     </div>
     
+   <!-- Tokenomics Section -->
+<div id="tokenomics" class="section">
+    <h2>Tokenomics</h2>
+    <p><strong>Address:</strong> <span id="token-address">3mvSxnGGq29qZXLjkyBKKxHeiM3jW4NXdE631b5iuZAF</span></p>
+    <button id="copy-btn" onclick="copyAddress()">Copy</button>
+    <p id="copy-status"></p>
+    <p><strong>Total Supply:</strong> 3,506,250,000.00</p>
+    <p><strong>LP:</strong> Burned</p>
+</div>
     <div id="community" class="section">
         <h2>Join the 51st State Coin Community</h2>
         <p>Join our social media and Telegram groups to stay updated and share your memes!</p>
@@ -238,5 +247,24 @@
             document.querySelector('.nav-links').classList.toggle('active');
         }
     </script>
+<script>
+    function copyAddress() {
+        // Create a range object
+        const address = document.getElementById("token-address").innerText;
+        const textarea = document.createElement('textarea');
+        document.body.appendChild(textarea);
+        textarea.value = address;
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+
+        // Change button text to "Copied"
+        document.getElementById("copy-status").innerText = "Copied!";
+        setTimeout(function() {
+            document.getElementById("copy-status").innerText = "";
+        }, 2000);
+    }
+</script>
+
 </body>
 </html>
